@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/pesoEDT"
+        style="@style/input_style"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        android:hint="Seu peso (ex: 65.8)Kg"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32999998" />
+
+    <EditText
+        android:id="@+id/alturaEDT"
+        style="@style/input_style"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@color/teal_200"
+        android:hint="Sua altura. (ex: 1.72)m"
+        android:inputType="numberDecimal"
+        android:textSize="20sp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/pesoEDT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/calcularBTN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:padding="16dp"
+        android:text="CALCULAR"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <TextView
+        android:id="@+id/titleTXT"
+        style="@style/title_purple"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="IMC"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <TextView
+        android:id="@+id/IMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="IMC"
+        android:textAlignment="center"
+        android:textColor="@color/teal_200"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/pesoEDT" />
+
+
+    <TextView
+        android:id="@+id/classe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="CLASSIFICAÇÃO"
+        android:textAlignment="center"
+        android:textColor="@color/teal_200"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/pesoEDT" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <TextView
+        android:id="@+id/imc1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="menor que 18,5"
+        android:textAlignment="center"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/IMC" />
+
+    <TextView
+        android:id="@+id/imc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="18,6 a 24,9"
+        android:textAlignment="center"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/imc1" />
+
+    <TextView
+        android:id="@+id/imc3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="25,0 a 29,9"
+        android:textAlignment="center"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/imc2" />
+
+    <TextView
+        android:id="@+id/imc4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="30,0 a 34,9"
+        android:textAlignment="center"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/imc3" />
+
+    <TextView
+        android:id="@+id/imc5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="35,0 a 39,9"
+        android:textAlignment="center"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/imc4" />
+
+    <TextView
+        android:id="@+id/imc6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text=">= 40"
+        android:textAlignment="center"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/imc5" />
+
+    <TextView
+        android:id="@+id/classe1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Abaixo do Peso"
+        android:textAlignment="center"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/classe" />
+
+    <TextView
+        android:id="@+id/classe2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Saúdavel"
+        android:textAlignment="center"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/classe1" />
+
+    <TextView
+        android:id="@+id/classe3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Peso em Excesso"
+        android:textAlignment="center"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/classe2" />
+
+    <TextView
+        android:id="@+id/classe4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Obesidade Grau I"
+        android:textAlignment="center"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/classe3" />
+
+    <TextView
+        android:id="@+id/classe5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Obesidade Grau II"
+        android:textAlignment="center"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/classe4" />
+
+    <TextView
+        android:id="@+id/classe6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Obesidade Grau III"
+        android:textAlignment="center"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/classe5" />
+
+    <TextView
+        android:id="@+id/classe7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SEVERA"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/classe5" />
+
+    <TextView
+        android:id="@+id/classe8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MÓRBIDA"
+        android:textColor="@color/material_on_primary_disabled"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/classe6" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:text="Desenvolvido por EBS"
+        android:textColor="@color/teal_200"
+        android:textSize="8sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
